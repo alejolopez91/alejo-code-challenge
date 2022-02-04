@@ -5,7 +5,9 @@ describe Slang::Activities do
 
   describe "get_activities" do
     it "finds activities" do
-      expect(subject.get_activities).to eq(nil)
+      # Implement VCR cassette
+      expect(HTTParty).to receive(:get)
+      subject.get_activities
     end
   end
 end
