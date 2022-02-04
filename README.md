@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the code challenge By Alejandro Lopez
 
-Things you may want to cover:
+Didn't make it till the end
 
-* Ruby version
+Implemented =>
 
-* System dependencies
+* Activities controller with the implementation of activities service to get the activities
+* Sessions controller with the implementation of sessions service to get de activities and sort the data
 
-* Configuration
+Data is grouped and returns the correct format but is not divided in sessions ( work still in progress, sorry about that )
 
-* Database creation
+TODO:
+* Rspec gem is added but time was limited
+* Error handling for custom error status
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
