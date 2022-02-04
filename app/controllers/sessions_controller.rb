@@ -2,8 +2,10 @@ class SessionsController < BaseController
   def show
     service = Slang::Sessions.new
 
-    service.sort_sessions
+    sorted_sessions = service.sort_sessions
+    # post result
+    response = service.post_results
 
-    render json: service.response, status: service.status
+    render json: { "user_sessions": sorted_sessions }, status: response.code
   end
 end
