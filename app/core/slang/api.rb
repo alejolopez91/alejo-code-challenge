@@ -19,8 +19,11 @@ module Slang
       HTTParty.get(url, headers: headers, query: params)
     end
 
-    def post()
+    def post(path: "challenges/v1/activities/sessions", body: {})
+      url = "#{base_url}/#{path}"
+      # log params of request with company logger
 
+      HTTParty.post(url, body: body, headers: headers)
     end
   end
 end
