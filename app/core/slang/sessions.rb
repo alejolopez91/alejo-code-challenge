@@ -1,18 +1,14 @@
 module Slang
   class Sessions
-    attr_reader :provider, :response
+    attr_reader :provider
 
-    def initialize(provider: Slang::Activities.new, api_client: Slang::Api.new)
+    def initialize(provider: Slang::Activities.new)
       @provider = provider
     end
 
     def sort_sessions
       raw_data = provider.get_activities
-      @response = process_data(raw_data["activities"])
-    end
-
-    def post_results
-      api_client.post(body: response)
+      process_data(raw_data["activities"])
     end
 
     private

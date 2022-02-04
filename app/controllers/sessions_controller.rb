@@ -3,9 +3,11 @@ class SessionsController < BaseController
     service = Slang::Sessions.new
 
     sorted_sessions = service.sort_sessions
+    body = { "user_sessions": sorted_sessions }
     # post result
-    response = service.post_results
+    api = Slang::Api.new
+    response = api.post(body: body)
 
-    render json: { "user_sessions": sorted_sessions }, status: response.code
+    render json: body, status: response.code
   end
 end
