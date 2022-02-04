@@ -6,9 +6,10 @@ module Slang
 
     def initialize(base_url: "https://api.slangapp.com")
       @base_url = base_url
+      auth_key = ENV["AUTH_KEY"] || "Basic MTU6RmpwbVVTaW9jRmhMMWZYaEQ0TnJWNWtGL2UrUFBOTTlVVm9YY1pOME9laz0="
       @headers = { 
         "Content-Type": "application/json",
-        "Authorization": "Basic MTU6RmpwbVVTaW9jRmhMMWZYaEQ0TnJWNWtGL2UrUFBOTTlVVm9YY1pOME9laz0="
+        "Authorization": auth_key
        }
     end
 
