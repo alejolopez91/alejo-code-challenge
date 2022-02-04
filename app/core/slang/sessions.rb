@@ -30,8 +30,10 @@ module Slang
     end
 
     def sort_date(activities)
-      activities.each { |activity| activity["first_seen_at"] = Time.parse(activity["first_seen_at"]) }
-      activities.each { |activity| activity["answered_at"] = Time.parse(activity["answered_at"]) }
+      activities.each do |activity|
+        activity["first_seen_at"] = Time.parse(activity["first_seen_at"])
+        activity["answered_at"] = Time.parse(activity["answered_at"])
+      end
     end
 
     def divide_sessions(activities)
